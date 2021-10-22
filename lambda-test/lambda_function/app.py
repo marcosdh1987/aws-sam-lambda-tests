@@ -1,6 +1,5 @@
 import json
 import requests
-import pandas as pd
 
 
 # import requests
@@ -14,7 +13,7 @@ def lambda_handler(event, context):
     try:
         response = requests.get(source_url)
         #logger.info("URL is valid and exists on the internet")
-
+        
 
 
         return {
