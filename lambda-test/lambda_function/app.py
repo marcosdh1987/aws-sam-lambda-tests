@@ -1,6 +1,11 @@
 import json
 import requests
+import os
+import logging
 
+# create logging
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 # import requests
 
@@ -12,14 +17,15 @@ def lambda_handler(event, context):
     
     try:
         response = requests.get(source_url)
-        #logger.info("URL is valid and exists on the internet")
+        logger.info("URL is valid and exists on the internet")
+        print(os.getcwd())
         
 
 
         return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "URL is valid and exists on the internet",
+            "message": str(os.getcwd()),
             # "location": ip.text.replace("\n", "")
         }),
             }
